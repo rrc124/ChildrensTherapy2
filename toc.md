@@ -1,9 +1,11 @@
-# Children's Therapy
+# Children's Therapy Table of contents
 
+1.  [Table of contents](toc.md)
+
+## About
 This file provides a table of contents for Children's Therapy Project.
-
-## Contents
-
 1.  [Readme](README.md)
-2.  [Table of contents](toc.md)
+
+## Design
+
 3.  [MainActivity(Button)](ChildrensTherapy/app/src/main/java/com/example/childrenstherapy/MainActivity.kt)
