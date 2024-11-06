@@ -3,11 +3,11 @@
    These are the nessasary imports, described in detail below */
 
 package com.example.childrenstherapy
-
-import android.os.Bundle
-/* Bundle, imported above, allows the app to save the activity and keep your
+/* Bundle, imported below, allows the app to save the activity and keep your
    state in the program. With bundle, if your app is moved to the background, it
    will return to the state you left it. */
+import android.os.Bundle
+
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -33,20 +33,16 @@ import com.example.childrenstherapy.ui.theme.ChildrensTherapyTheme
 /* Similar to int main() entry point in C++, but this is specific to Android app
    development."
 
-   Bundle, imported above, allows the app to save the activity and keep your
-   state in the program. With bundle, if your app is moved to the background, it
-   will return to the state you left it.
-
    Class: Main
 
-   <span style="caret-color: initial;">class</span> <span style="caret-color: initial;">&nbsp;</span>Activity<span style="caret-color: initial;">MainActivity"
-   is declared in the AndroidManifest.xml file.</span>
+   Activity<span style="caret-color: initial;">MainActivity" is declared in the
+   AndroidManifest.xml file.</span>
 
-   The syntax class_name : other_class_name signifies MainActivity inherits all
+   The syntax class_name: other_class_name signifies MainActivity inherits all
    methods from the other class, ComponentActivity.Scaffold, a Jetpack Compose
    function, provides UI layouts (such as having a title on top, a button in the
    bottom right, and a bottom bar) and standard spacing.
-   https://www.geeksforgeeks.org/scaffold-in-android-using-jetpack-compose/?ref=header\_outind
+   ([More Info](https://www.geeksforgeeks.org/scaffold-in-android-using-jetpack-compose/?ref=header_outind))
    Placing the Scaffold function under setContent ensures it takes up the entire
    available space. */
 class MainActivity : ComponentActivity() {
@@ -68,35 +64,49 @@ class MainActivity : ComponentActivity() {
    complex UI structures. So "@Composable" tells the function "Greeting" to use
    the Jetpack Compose UI framework. */
 @Composable
+/*
+var is mutable variable, vs val which is not.
+*/
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    var helloEmoji by remember { // var is mutable variable, vs val which is not.
+    var helloEmoji by remember {
         mutableStateOf(false)
     }
-    /* ```
-       Function "Column" arranges items vertically.  The function "Button" is placed within this column
-       that shows "Hi, my name is ...".  When this button is clicked, the state of "helloEmoji" is set to
-       true and a GIF emoji is displayed.
-       ``` */
-    Column( // Function imported from import androidx.compose.foundation.layout.
-        // Column gives Greeting a vertical layout.
+/* Function "Column" arranges items vertically. The function "Button" is placed
+   within this column that shows "Hi, my name is ...". When this button is
+   clicked, the state of "helloEmoji" is set to true and a GIF emoji is
+   displayed.
+   
+    Function imported from import androidx.compose.foundation.layout.
+    Column gives Greeting a vertical layout.
+*/
+    Column(
         horizontalAlignment  = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.padding(24.dp) // Modifier function contains decorations and
-        // behaviors to function Column.
-        // https://www.geeksforgeeks.org/concept-of-padding-in-android/?ref=header\_outind
+/*
+Modifier function contains decorations and ()
+*/
+        modifier = Modifier.padding(24.dp)
 
     )
-    /* ```
-       Button is a Composable function that creates a clickable button UI.
-       This function provides a string of text (Hi, my name is $name!"
-       ``` */
+/*
+Button is a Composable function that creates a clickable button UI.
+This function provides a string of text (Hi, my name is $name!"
+ */
     {
         Button(
-            onClick = { helloEmoji = true }, // Sets a boolean state to var "helloEmoji".
-            // If Button is clicked, set "helloEmoji" to true.
+/*
+ Sets a boolean state to var "helloEmoji".
+*/
+            onClick = { helloEmoji = true },
+/*
+If Button is clicked, set "helloEmoji" to true.
+*/
             modifier = Modifier.padding(24.dp)
         ) {
-            Text(text = "Hi, my name is $name!") // Text that shows inside the button.
+/*
+Text that shows inside the button.
+*/
+            Text(text = "Hi, my name is $name!")
         }
 
         // If "helloEmoji" is true, then display the GIF.
