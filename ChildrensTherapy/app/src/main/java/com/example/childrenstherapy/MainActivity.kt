@@ -69,10 +69,7 @@ class MainActivity : AppCompatActivity() {
     private fun VideoView(url: String) {
         video path 
 
-        Button2
-
-        // parses the URL and converts it to Uri, which is needed for viewing a video
-        val video: Uri = Uri.parse(url) 
+        Button
 
         // This requests an app capable of viewing a video to do that job.  We may need to go back and specify a default web browser.
         val intent = Intent(Intent.ACTION_VIEW, video)
