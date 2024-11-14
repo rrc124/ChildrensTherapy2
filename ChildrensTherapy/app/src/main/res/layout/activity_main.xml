@@ -17,7 +17,6 @@
             android:text="Open Webpage" />
 
         <Button
-            android:id="@+id/monkey_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_2_text"
@@ -94,3 +93,36 @@
     </TableRow>
 
 </TableLayout>
+
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idRLContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"> 
+  
+    <!--on below line we are creating a simple text view-->
+    <TextView
+        android:id="@+id/idTVHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Video View in Android"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" /> 
+  
+    <!-- adding VideoView to the layout -->
+    <VideoView
+        android:id="@+id/idVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVHeading"
+        android:layout_centerInParent="true" /> 
+      
+</RelativeLayout>

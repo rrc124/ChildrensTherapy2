@@ -82,6 +82,4 @@ class MainActivity : AppCompatActivity() {
         } else {
             Log.d("MainActivity", "No application can handle this intent.")
         }
-    }
-
 }
