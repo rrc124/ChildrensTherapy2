@@ -16,12 +16,17 @@
             android:layout_height="wrap_content"
             android:text="Open Webpage" />
 
-        <Button2
-            android:id="@+id/button2"
+        <Button
+            android:id="@+id/monkey_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_2_text"
             style="?android:attr/buttonBarButtonStyle" />
+        <VideoView
+            android:id="@+id/idVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@id/monkey_video" />
 
         <Button
             android:id="@+id/button3"

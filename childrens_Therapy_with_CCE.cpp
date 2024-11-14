@@ -11,15 +11,35 @@ import android.widget.MediaController
 
 
 
-/*
-Syntax: class MainActivity "of" (:) AppCompatActivity()
-AppCompatActivity() supports modern themes while offering compatibility to older devices.
-This is set when you choose backwards compatibility upon setting up the project.
+// # General Overview of Kotlin and Childrens Therapy App <br>
+/* <br>  
+
+
+
+## Kotlin
+***class MainActivity "of" (:) AppCompatActivity()***
+<br><br>
+Similar to int main() entry point in C++, class MainActivity() is the entry point of the program. 
+<br>*AppCompatActivity()* provides backwards compatibility for android devices. By setting *MainActivity()*<br>
+as a subclass of *AppCompatActivity()*, we ensure that our main function inherits all of the backwards<br>
+compatibility and adaptability (such as toolbars and themes) for older devices.
+
+*lateinit* is a kotlin keyword that alows us to declare variables that we will use later without having to<br> 
+set them to null.<br><br>
+***lateinit var videoView: VideoView*** tells Kotlin that *videoView* will be initialized later.
+
+## Children's Therapy App <br>
+The Children's Therapy App currently includes two main functions: opening a webpage and playing a from <br>
+the internal file system of an Android device. The *MainActivity* class is the entry point of the app. The app<br>
+uses 3x3 button grid to control actions such as playing videos or showing images.
  */
 
+
 /*
-Followed walkthrough from https://www.geeksforgeeks.org/videoview-in-android/ and used chatgpt
-for debugging and helping to close some loose ends.
+The hyperlinked website was used to walkthrough creating a video link. ChatGPT was used for debugging and <br>
+helping to close some loose ends and used chatgpt for debugging and helping to close some loose ends.<br><br>
+[Link](https://www.geeksforgeeks.org/videoview-in-android/)
+<br><br>
  */
 class MainActivity : AppCompatActivity() {
     private lateinit var videoView: VideoView
@@ -34,9 +54,10 @@ class MainActivity : AppCompatActivity() {
 
         videoView = findViewById(R.id.idVideoView)
 
-        // Sets up click listener for the button
-        // button_open_webpage is an ID used in activity_main.xml, which is expected to be assigned to a <button>.
-        // Dot notation used to call the .setOnClickListener method.
+        // Sets up click listener for the button<br>
+        // button_open_webpage is an ID used in activity_main.xml, which is expected to be assigned to a <button>.<br>
+        // Dot notation used to call the *setOnClickListener* method.<br>
+
         findViewById<Button>(R.id.button_open_webpage).setOnClickListener {
             val webpageUrl = "https://www.google.com"
             openWebPage(webpageUrl)
@@ -73,7 +94,6 @@ class MainActivity : AppCompatActivity() {
         // This requests an app capable of viewing a webpage to do that job.  We may need to go back and specify a default web browser.
         val intent = Intent(Intent.ACTION_VIEW, webpage)
 
-        // Add logging to check if the intent resolves successfully
         // Throws a error that no webpage handling app is available
         val chooser = Intent.createChooser(intent, "Select a browser")
         if (intent.resolveActivity(packageManager) != null) {
