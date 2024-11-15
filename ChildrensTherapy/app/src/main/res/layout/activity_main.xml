@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
@@ -14,26 +14,33 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open Webpage" />
+            android:text="Spongebob" />
 
         <Button
+            android:id="@+id/monkey_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_2_text"
+            android:text="Monkeys"
             style="?android:attr/buttonBarButtonStyle" />
-        <VideoView
-            android:id="@+id/idVideoView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@id/monkey_video" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_3_text"
+            android:text="Button 3"
             style="?android:attr/buttonBarButtonStyle" />
+    </TableRow>
 
+    <!-- VideoView in a new row -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:id="@+id/idVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_span="500" />
     </TableRow>
 
     <!-- Second Row -->
@@ -61,7 +68,6 @@
             android:layout_height="wrap_content"
             android:text="@string/button_6_text"
             style="?android:attr/buttonBarButtonStyle" />
-
     </TableRow>
 
     <!-- Third Row -->
@@ -89,40 +95,6 @@
             android:layout_height="wrap_content"
             android:text="@string/button_9_text"
             style="?android:attr/buttonBarButtonStyle" />
-
     </TableRow>
 
 </TableLayout>
-
-<RelativeLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/idRLContainer"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"> 
-  
-    <!--on below line we are creating a simple text view-->
-    <TextView
-        android:id="@+id/idTVHeading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Video View in Android"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" /> 
-  
-    <!-- adding VideoView to the layout -->
-    <VideoView
-        android:id="@+id/idVideoView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idTVHeading"
-        android:layout_centerInParent="true" /> 
-      
-</RelativeLayout>

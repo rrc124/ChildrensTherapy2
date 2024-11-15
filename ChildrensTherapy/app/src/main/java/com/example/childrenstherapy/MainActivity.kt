@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         // button_open_webpage is an ID used in activity_main.xml, which is expected to be assigned to a <button>.
         // Dot notation used to call the .setOnClickListener method.
         findViewById<Button>(R.id.button_open_webpage).setOnClickListener {
-            val webpageUrl = "https://www.google.com"
+            val webpageUrl = "https://youtu.be/h2vxQ8Tewok?si=ZVWz5w_L_vrn1wuN"
             openWebPage(webpageUrl)
             // Log.d sends debugging information to Logcat so we can view what's going on.
             // Other methods in Log.<method> are: Log.v (low level info); Log.i (general info); Log.w (warnings); Log.e (error messages)
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         // Add logging to check if the intent resolves successfully
         // Throws a error that no webpage handling app is available
         val chooser = Intent.createChooser(intent, "Select a browser")
-        if (intent.resolveActivity(packageManager) != null) {
+        if (chooser.resolveActivity(packageManager) != null) {
             Log.v("MainActivity", "Intent resolved successfully.")
             startActivity(chooser)
         } else {
