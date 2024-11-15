@@ -104,20 +104,20 @@ class MainActivity : AppCompatActivity() {
             toadImage.setImageResource(R.drawable.toad)
         }
     }
-}
-// Function takes a URL to op0en a webpage.
-private fun openWebPage(url: String) {
-    // parses the URL and converts it to Uri, which is needed for viewing a webpage.
-    val webpage: Uri = Uri.parse(url)
 
-    // Requests an app capable of viewing a webpage.
-    val intent = Intent(Intent.ACTION_VIEW, webpage)
+    private fun openWebPage(url: String) {
+        // parses the URL and converts it to Uri, which is needed for viewing a webpage.
+        val webpage: Uri = Uri.parse(url)
 
-    val chooser = Intent.createChooser(intent, "Select a browser")
-    if (chooser.resolveActivity(packageManager) != null) {
-        Log.v("MainActivity", "Intent resolved successfully.")
-        startActivity(chooser)
-    } else {
-        Log.d("MainActivity", "No application can handle this intent.")
+        // Requests an app capable of viewing a webpage.
+        val intent = Intent(Intent.ACTION_VIEW, webpage)
+
+        val chooser = Intent.createChooser(intent, "Select a browser")
+        if (chooser.resolveActivity(this.packageManager) != null) { // Explicitly use `this.packageManager`
+            Log.v("MainActivity", "Intent resolved successfully.")
+            startActivity(chooser)
+        } else {
+            Log.d("MainActivity", "No application can handle this intent.")
+        }
     }
 }
