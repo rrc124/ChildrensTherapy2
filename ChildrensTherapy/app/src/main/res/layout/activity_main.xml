@@ -24,10 +24,10 @@
             style="?android:attr/buttonBarButtonStyle" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/toad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 3"
+            android:text="Toad"
             style="?android:attr/buttonBarButtonStyle" />
     </TableRow>
 
@@ -41,6 +41,11 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_span="500" />
+        <ImageView
+            android:id="@+id/toadView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toad" />
     </TableRow>
 
     <!-- Second Row -->
