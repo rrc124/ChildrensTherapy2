@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.VideoView
 import android.widget.MediaController
 /*
-# Children's Therapy App and General Overview of Kotlin <br>
+# Children's Therapy App and General Overview of Kotlin  <br>
  <br>
 
 # Children's Therapy App <br>
